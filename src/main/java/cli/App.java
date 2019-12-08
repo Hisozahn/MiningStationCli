@@ -1,3 +1,5 @@
+package cli;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.GenericType;
@@ -59,7 +61,7 @@ public class App {
 
         ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class);
 
-        System.out.println(response.getStatusInfo());
+        System.out.println(response.getClientResponseStatus());
     }
 
     public static void getBaseStatus(Client client){
@@ -76,7 +78,7 @@ public class App {
 
         ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class);
 
-        System.out.println(response.getStatusInfo());
+        System.out.println(response.getClientResponseStatus());
     }
 
     public static void repairBattery(Client client, int batteryNumber){
@@ -85,7 +87,7 @@ public class App {
 
         ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class);
 
-        System.out.println(response.getStatusInfo());
+        System.out.println(response.getClientResponseStatus());
     }
 
     public static void saveRobot(Client client, int id){
@@ -94,6 +96,6 @@ public class App {
 
         ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class);
 
-        System.out.println(response.getStatusInfo());
+        System.out.println(response.getClientResponseStatus());
     }
 }
